@@ -123,6 +123,7 @@ GROUP BY category
 
 
 --Her vardiyayi ve siparis sayisini olusturmak için bir SQL sorgusu yazalim (Örnek Sabah <12, Ogleden Sonra 12 ile 17 Arasi, Aksam >17)
+
 ;WITH hourly_sale AS (
 SELECT *,
 CASE

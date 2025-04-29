@@ -1,7 +1,7 @@
 SELECT * FROM [SQL - Retail Sales Analysis_utf ]
 
 --Data Cleaning
---boþ deðerler olup olmadýðýna bakmak için;
+--bos degerler olup olmadigÄ±na bakmak icin;
 SELECT *
 FROM [SQL - Retail Sales Analysis_utf ]
 WHERE transactions_id IS NULL 
@@ -22,7 +22,7 @@ WHERE transactions_id IS NULL
 	  OR
 	  total_sale IS NULL
 
---boþ deðerlerimizi silebiliriz.Silme iþlemini yapalým;
+--bos degerlerimizi silebiliriz.Silme islemini yapalim;
 DELETE FROM [SQL - Retail Sales Analysis_utf ]
 WHERE transactions_id IS NULL 
       OR
@@ -42,12 +42,12 @@ WHERE transactions_id IS NULL
 	  OR
 	  total_sale IS NULL
 
---silindiðini kontrol edelim
+--silindigini kontrol edelim
 SELECT COUNT(*) 
 FROM [SQL - Retail Sales Analysis_utf ] 
 
 --Data Exploration
---kaç tane benzersiz müþterimiz var?
+--kaÃ§ tane benzersiz mÃ¼sterimiz var?
 SELECT COUNT(DISTINCT customer_id) as total_customer 
 FROM [SQL - Retail Sales Analysis_utf ]
 
@@ -56,13 +56,13 @@ FROM [SQL - Retail Sales Analysis_utf ]
 SELECT DISTINCT category as category from [SQL - Retail Sales Analysis_utf ]
 
 --Data Analysis & Business Key Problems & answers
---05.11.2022 tarihinde yapýlan satýþlarý getirelim:
+--05.11.2022 tarihinde yapÃ½lan satÃ½Ã¾larÃ½ getirelim:
 SELECT * FROM [SQL - Retail Sales Analysis_utf ]
 WHERE sale_date='2022-11-05'
 
 
 
---Kasým-2022 ayýnda kategorinin 'Clothing' olduðu ve satýlan miktarýn 4'ten fazla olduðu tüm iþlemleri almak için bir SQL sorgusu yazýn 
+--KasÃ½m-2022 ayÃ½nda kategorinin 'Clothing' oldugu ve satilan miktarÄ±n 4'ten fazla oldugu tÃ¼m islemleri almak iÃ§in bir SQL sorgusu yazalim
 
 SELECT *
 FROM [SQL - Retail Sales Analysis_utf ]
@@ -72,31 +72,31 @@ and quantiy>=4
 
 
 
---Her kategori için toplam satýþlarý (total_sale) hesaplayan bir SQL sorgusu yazýn 
+--Her kategori iÃ§in toplam satislari (total_sale) hesaplayan bir SQL sorgusu yazalim:
 SELECT category,SUM(total_sale) total_sale,COUNT(*) total_orders
 FROM [SQL - Retail Sales Analysis_utf ]
 GROUP BY category
 
 
 
---'Beauty' kategorisinden ürün satýn alan müþterilerin ortalama yaþýný bulmak için bir SQL sorgusu yazýn .
+--'Beauty' kategorisinden Ã¼rÃ¼n satÄ±n alan mÃ¼sterilerin ortalama yasini bulmak iÃ§in bir SQL sorgusu yazalim:
 SELECT category,AVG(age)
 FROM [SQL - Retail Sales Analysis_utf ]
 WHERE category='Beauty'
 Group By category
 
 
---total_sale'in 1000'den büyük olduðu tüm iþlemleri bulmak için bir SQL sorgusu yazýn .
+--total_sale 1000'den bÃ¼yÃ¼k oldugu tÃ¼m islemleri bulmak iÃ§in bir SQL sorgusu yazalim.
 SELECT *
 FROM [SQL - Retail Sales Analysis_utf ]
 WHERE total_sale>1000
 
---Her cinsiyetin her kategoride yaptýðý toplam iþlem sayýsýný (transaction_id) bulmak için bir SQL sorgusu yazýn .
+--Her cinsiyetin her kategoride yaptÄ±gÄ± toplam islem sayisini (transaction_id) bulmak iÃ§in bir SQL sorgusu yazalim
 SELECT gender,category ,COUNT(*)
 FROM [SQL - Retail Sales Analysis_utf ]
 GROUP BY gender,category
 
---Her ayýn ortalama satýþýný hesaplamak için bir SQL sorgusu yazýn. Her yýl en çok satan ayý bulun :
+--Her ayÄ±n ortalama satisini hesaplamak iÃ§in bir SQL sorgusu yazalim. Her yil en Ã§ok satan ay bulalÄ±m :
 SELECT year_,month_,avg_sale FROM (
         SELECT YEAR(sale_date) as year_,
                MONTH(sale_date) as month_,
@@ -108,21 +108,21 @@ SELECT year_,month_,avg_sale FROM (
 WHERE rank=1
 
 
---En yüksek toplam satýþlara göre ilk 5 müþteriyi bulmak için bir SQL sorgusu yazýn:
+--En yÃ¼ksek toplam satislara gÃ¶re ilk 5 mÃ¼steriyi bulmak iÃ§in bir SQL sorgusu yazalim:
 SELECT TOP 5 customer_id,SUM(total_sale) total_sale
 FROM [SQL - Retail Sales Analysis_utf ]
 GROUP BY customer_id
 ORDER BY 2 DESC
 
 
---Her kategoriden ürün satýn alan benzersiz müþteri sayýsýný bulmak için bir SQL sorgusu yazýn 
+--Her kategoriden Ã¼rÃ¼n satin alan benzersiz mÃ¼steri sayisini bulmak iÃ§in bir SQL sorgusu yazalim.
 SELECT category,COUNT(DISTINCT customer_id) customer
 FROM [SQL - Retail Sales Analysis_utf ]
 GROUP BY category
 
 
 
---Her vardiyayý ve sipariþ sayýsýný oluþturmak için bir SQL sorgusu yazýn (Örnek Sabah <12, Öðleden Sonra 12 ile 17 Arasý, Akþam >17)
+--Her vardiyayi ve siparis sayisini olusturmak iÃ§in bir SQL sorgusu yazalim (Ã–rnek Sabah <12, Ogleden Sonra 12 ile 17 Arasi, Aksam >17)
 ;WITH hourly_sale AS (
 SELECT *,
 CASE

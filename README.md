@@ -5,8 +5,8 @@ Keşifsel Veri Analizi (EDA) : Veri setini anlamak için temel keşifsel veri an
 İş Analizi : Belirli iş sorularını yanıtlamak ve satış verilerinden içgörüler elde etmek için SQL kullanmak.
 
 Bulgular:
-Müşteri Demografisi : Veri seti, Giyim ve Güzellik gibi farklı kategorilere dağılmış satışlarla, çeşitli yaş gruplarından müşterileri içermektedir.
-Yüksek Değerli İşlemler : Birkaç işlemin toplam satış tutarı 1000'in üzerindeydi ve bu da primli satın alımları gösteriyordu.
+Müşteri Demografisi : Veri seti, Giyim ve Güzellik gibi farklı kategorilere dağılmış satışlarla, çeşitli yaş gruplarından müşterileri içermektedir./n
+Yüksek Değerli İşlemler : Birkaç işlemin toplam satış tutarı 1000'in üzerindeydi ve bu da primli satın alımları gösteriyordu./n
 Satış Trendleri : Aylık analizler satışlardaki değişimleri göstererek yoğun sezonların belirlenmesine yardımcı olur.
 Müşteri İçgörüleri : Analiz, en çok harcama yapan müşterileri ve en popüler ürün kategorilerini belirler.
 

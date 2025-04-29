@@ -62,7 +62,7 @@ WHERE sale_date='2022-11-05'
 
 
 
---Kasým-2022 ayinda kategorinin 'Clothing' oldugu ve satilan miktarın 4'ten fazla oldugu tüm islemleri almak için bir SQL sorgusu yazalim
+--Kasim-2022 ayinda kategorinin 'Clothing' oldugu ve satilan miktarın 4'ten fazla oldugu tüm islemleri almak için bir SQL sorgusu yazalim
 
 SELECT *
 FROM [SQL - Retail Sales Analysis_utf ]

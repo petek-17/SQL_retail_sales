@@ -56,13 +56,13 @@ FROM [SQL - Retail Sales Analysis_utf ]
 SELECT DISTINCT category as category from [SQL - Retail Sales Analysis_utf ]
 
 --Data Analysis & Business Key Problems & answers
---05.11.2022 tarihinde yapýlan satýþlarý getirelim:
+--05.11.2022 tarihinde yapilan satislari getirelim:
 SELECT * FROM [SQL - Retail Sales Analysis_utf ]
 WHERE sale_date='2022-11-05'
 
 
 
---Kasým-2022 ayýnda kategorinin 'Clothing' oldugu ve satilan miktarın 4'ten fazla oldugu tüm islemleri almak için bir SQL sorgusu yazalim
+--Kasým-2022 ayinda kategorinin 'Clothing' oldugu ve satilan miktarın 4'ten fazla oldugu tüm islemleri almak için bir SQL sorgusu yazalim
 
 SELECT *
 FROM [SQL - Retail Sales Analysis_utf ]
@@ -79,7 +79,7 @@ GROUP BY category
 
 
 
---'Beauty' kategorisinden ürün satın alan müsterilerin ortalama yasini bulmak için bir SQL sorgusu yazalim:
+--'Beauty' kategorisinden ürün satin alan müsterilerin ortalama yasini bulmak için bir SQL sorgusu yazalim:
 SELECT category,AVG(age)
 FROM [SQL - Retail Sales Analysis_utf ]
 WHERE category='Beauty'
@@ -91,12 +91,12 @@ SELECT *
 FROM [SQL - Retail Sales Analysis_utf ]
 WHERE total_sale>1000
 
---Her cinsiyetin her kategoride yaptıgı toplam islem sayisini (transaction_id) bulmak için bir SQL sorgusu yazalim
+--Her cinsiyetin her kategoride yaptigi toplam islem sayisini (transaction_id) bulmak için bir SQL sorgusu yazalim
 SELECT gender,category ,COUNT(*)
 FROM [SQL - Retail Sales Analysis_utf ]
 GROUP BY gender,category
 
---Her ayın ortalama satisini hesaplamak için bir SQL sorgusu yazalim. Her yil en çok satan ay bulalım :
+--Her ayın ortalama satisini hesaplamak için bir SQL sorgusu yazalim. Her yil en çok satan ay bulalim :
 SELECT year_,month_,avg_sale FROM (
         SELECT YEAR(sale_date) as year_,
                MONTH(sale_date) as month_,
